@@ -31,8 +31,9 @@ if (!empty(getenv('SPRYKER_ACTIVE_STORES'))) {
             ],
         ],
         'locales' => [
-            // first entry is default
-            'en' => 'en_US',
+		// first entry is default
+		'en' => 'en_US',
+		'ru' => 'ru_RU',
             'de' => 'de_DE',
         ],
         // first entry is default
@@ -84,14 +85,15 @@ $stores['DE'] = [
     ],
     'locales' => [
         // first entry is default
-        'en' => 'en_US',
+	    'en' => 'en_US',
+	    'ru' => 'ru_RU',
         'de' => 'de_DE',
     ],
     // first entry is default
     'countries' => ['DE', 'AT', 'NO', 'CH', 'ES', 'GB'],
     // internal and shop
     'currencyIsoCode' => 'EUR',
-    'currencyIsoCodes' => ['EUR', 'CHF'],
+    'currencyIsoCodes' => ['EUR', 'RUB', 'CHF'],
     'queuePools' => [
         'synchronizationPool' => [
             'AT-connection',
