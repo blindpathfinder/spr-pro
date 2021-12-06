@@ -4,19 +4,23 @@
         overflow: hidden;
 
         &__container {
-            height: rem(160);
-            background: linear-gradient(to left top, $setting-color-gray-3, $setting-color-gray-4) no-repeat center /
-                cover;
+            height: rem(450);
+            max-width: 1366px;
+            margin: 0 auto;
+            background: linear-gradient(to left top, $setting-color-gray-3, $setting-color-gray-4)  center/100% auto no-repeat;
             text-align: center;
             position: relative;
-
+            @include helper-breakpoint(sm) {
+                height: rem(140);
+            }
             @include helper-breakpoint(md) {
                 height: rem(240);
             }
 
             @include helper-breakpoint(xl) {
-                height: rem(400);
+                height: rem(450);
             }
+
         }
 
         &__link {

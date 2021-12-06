@@ -17,7 +17,9 @@
     <form action="{{data.searchUrl}}">
         <div class="grid">
             <div class="col col--sm-10">
-                <input name="q" type="text" class="input input--expand suggest-search__input {{ config.jsName }}__input--{{ attributes['data-search-id'] }}" placeholder="{{ 'global.search' | trans }}" value="{{data.searchValue}}" autofocus="autofocus" autocomplete="off">
+                <input name="q" type="text" class="input input--expand suggest-search__input {{ config.jsName }}__input--{{ attributes['data-search-id'] }}"
+                       placeholder="Поиск книг по названию/предмету/автору/ISBN"
+                       value="{{data.searchValue}}" autofocus="autofocus" autocomplete="off">
             </div>
         </div>
 

@@ -26,6 +26,7 @@
             &--hidden {
                 display: none;
             }
+
         }
 
         #{$name}__menu--flyout,
@@ -33,25 +34,30 @@
             margin: 0;
             left: -1rem;
             right: -1rem;
-            background-color: $setting-color-white;
+            //background-color: $setting-color-white;
+            background: $setting-color-blue;
+
         }
 
         &__link {
             text-transform: uppercase;
-            font: fw(medium) rem(13) $setting-font-family-additional;
-            letter-spacing: rem(2);
+            font: fw(medium) rem(14) $setting-font-family-additional;
+            letter-spacing: 0;
             white-space: nowrap;
             cursor: pointer;
+            font-weight: 600;
+            /**/
+            color: white;
 
             &:hover {
-                color: $setting-color-alpha-3;
+                color: $setting-color-gray-3;
                 text-decoration: none;
             }
 
             &--lvl-2 {
                 text-transform: capitalize;
-                color: $setting-color-text;
-                font: fw(regular) rem(16) / rem(24) $setting-font-family;
+                //color: $setting-color-text;
+                font: fw(regular) rem(14) / rem(16) $setting-font-family;
                 letter-spacing: normal;
 
                 &:hover {
@@ -64,12 +70,15 @@
                 &#{$name}__link--lvl-1 {
                     display: inline-block;
                     padding: rem(16) 0;
+                    color: black;
                 }
 
                 &#{$name}__link--lvl-2 {
                     display: inline-block;
                     padding: 0 0 rem(12);
                     font-size: rem(15);
+                    color: black;
+
                 }
             }
 
@@ -78,6 +87,7 @@
 
                 &:hover {
                     color: $setting-color-black;
+
                 }
             }
         }
@@ -85,7 +95,7 @@
         &__flyout-fullscreen-container {
             @include helper-breakpoint-media-min($lg-min) {
                 position: relative;
-                padding: rem(40) rem(16) rem(20);
+                padding: rem(10) rem(16) rem(20);
                 box-shadow: none;
                 max-width: rem(745);
                 width: 100%;
@@ -96,10 +106,10 @@
                     position: absolute;
                     display: block;
                     width: rem(1);
-                    border-left: rem(1) dotted $setting-color-gray-3;
-                    top: rem(40);
+                    border-left: 1px solid $setting-color-gray-3;
+                    top: rem(25);
                     bottom: rem(25);
-                    left: 34%;
+                    left: 49%;
                 }
             }
 
@@ -111,7 +121,7 @@
         &__flyout-fullscreen-list {
             @include helper-breakpoint-media-min($lg-min) {
                 padding-right: rem(20);
-                max-width: 35%;
+                max-width: 50%;
                 width: 100%;
                 white-space: normal;
             }
@@ -163,7 +173,8 @@
             #{$name}__link {
                 &--flyout {
                     font-size: rem(16);
-                    color: $setting-color-black;
+                    //color: $setting-color-black;
+                    color: $setting-color-white;
                     letter-spacing: rem(0.2);
                     line-height: rem(20);
                     white-space: normal;
@@ -179,7 +190,7 @@
                     }
 
                     &:hover {
-                        color: $setting-color-alt;
+                        color: $setting-color-gray-3;
                     }
                 }
 
@@ -296,6 +307,7 @@
             position: relative;
 
             &#{$name}--lvl-1 {
+
                 border-top: rem(1) dotted $setting-color-gray-3;
             }
 

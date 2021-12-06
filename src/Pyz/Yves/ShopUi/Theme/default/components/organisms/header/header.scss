@@ -1,5 +1,6 @@
 @mixin shop-ui-header($name: '.header') {
     #{$name} {
+
         position: relative;
         background-color: $setting-color-white;
         z-index: $setting-zi-header;
@@ -19,7 +20,7 @@
         }
 
         &__top {
-            background: $setting-color-black;
+            //background: $setting-color-black;
             color: $setting-color-gray-3;
             margin-bottom: rem(15);
             display: none;
@@ -48,7 +49,16 @@
 
         &__navigation-top {
             position: relative;
-            z-index: $setting-zi-header + 3;
+
+            //z-index: $setting-zi-header + 3;
+        }
+        &__logo-width{
+            max-width: 166px;
+        }
+        @media (max-width: $md-min) {
+            &__logo-width{
+                display: none;
+            }
         }
 
         &__search-form {
@@ -57,6 +67,7 @@
         }
 
         &__navigation-main {
+            background: $setting-color-blue;
             position: relative;
             z-index: $setting-zi-header + 1;
         }
@@ -74,15 +85,19 @@
             visibility: hidden;
         }
 
+
         &__search-overlay {
             position: absolute;
-            top: 0;
+            top: 48px;
             z-index: $setting-zi-search-suggestions;
             visibility: hidden;
+            left: 50%;
+            margin-left: -270px;
 
             &.active {
                 visibility: visible;
-
+                left: 50%;
+                margin-left: -270px;
                 #{$name}__overlay-shadow {
                     @include helper-effect-transition(opacity visibility, 400ms, ease-in-out);
                     visibility: visible;
@@ -94,31 +109,84 @@
                     transform: scaleY(1);
                     opacity: 1;
                     visibility: visible;
+
                 }
             }
         }
 
+
         &__search-overlay-container {
+
             @include helper-effect-transition(all);
-            padding: rem(34) rem(30);
+            padding: rem(24) rem(20);
             background: $setting-color-white;
-            min-width: 100vw;
+
             transform-origin: top center;
             transform: scaleY(0);
             opacity: 0;
 
             @include helper-breakpoint-media-min($md-min) {
-                min-width: rem(480);
+                min-width: 580px;
+            }
+
+        }
+        @media (max-width: 768px) {
+            &__search-overlay {
+                width: 100%;
+                position: absolute;
+                top: 0px;
+                z-index: $setting-zi-search-suggestions;
+                visibility: hidden;
+                left: 0;
+                margin-left: 0px;
+
+                &.active {
+                    visibility: visible;
+                    left: 0;
+                    margin-left: 0px;
+                    #{$name}__overlay-shadow {
+                        @include helper-effect-transition(opacity visibility, 400ms, ease-in-out);
+                        visibility: visible;
+                        opacity: 0.4;
+                    }
+
+                    #{$name}__search-overlay-container {
+                        @include helper-effect-transition(all);
+                        transform: scaleY(1);
+                        opacity: 1;
+                        visibility: visible;
+
+                    }
+                }
+            }
+            &__search-overlay-container {
+
+                @include helper-effect-transition(all);
+                padding: rem(24) rem(20);
+                background: $setting-color-white;
+
+                transform-origin: top center;
+                transform: scaleY(0);
+                opacity: 0;
+
+                @include helper-breakpoint-media-min($md-max) {
+                    min-width: 580px;
+                }
+
             }
         }
 
         &__search-open {
+            text-align: center;
             cursor: pointer;
 
             &::before {
-                content: '';
+                content: 'Поиск книг по названию/ предмету/ автору/ ISBN';
+                color: #777;
+                letter-spacing: 1px;
+                text-align: start;
                 display: block;
-                width: rem(85);
+                width: 90%;
                 height: rem(25);
                 float: left;
                 border-bottom: rem(1) solid $setting-color-gray-4;
@@ -138,7 +206,7 @@
             padding: 0;
 
             @include helper-breakpoint-media-min($md-min) {
-                padding: rem(34) rem(30);
+                padding: rem(24) rem(30);
                 position: absolute;
                 right: 0;
                 top: 0;

@@ -9,10 +9,15 @@ $setting-color-gray-5: #444;
 $setting-color-gray-6: #333;
 $setting-color-black: #111;
 
+
+$setting-color-blue: #3b5cb1;
+$setting-color-white: #FFFFFF;
+
 $setting-color-info: #f0ede6;
 
-$setting-color-main: #00afb4;
-$setting-color-alt: #ff4859;
+//$setting-color-main: #00afb4;
+$setting-color-main: #3b5cb1;
+$setting-color-alt: $setting-color-blue;
 $setting-color-text: $setting-color-black;
 $setting-color-input-border: $setting-color-info;
 $setting-color-input-border-focus: $setting-color-gray-3;
@@ -37,7 +42,7 @@ $setting-color-statuses: (
     scheme-1-text: #00b2b5,
     scheme-1-backgound: #e9f7f7,
     scheme-2-text: #b7b1a5,
-    scheme-2-backgound: #f0ede6,
+    scheme-2-back gound: #f0ede6,
     scheme-3-text: $setting-color-gray-4,
     scheme-3-backgound: $setting-color-gray-2,
     scheme-4-text: #ff2a54,
